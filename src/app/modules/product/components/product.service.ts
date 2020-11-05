@@ -20,4 +20,19 @@ export class ProductService {
     return this.httpClient.post<Product>(this.baseUrl, product);
   }
 
+  update(product: Product) : Observable<Product> {
+    const url = this.baseUrl + "/" + product.id;
+    return this.httpClient.put<Product>(url, product);
+  }
+
+  findById(id: string) : Observable<Product> {
+    const url = this.baseUrl + '/' + id;
+    return this.httpClient.get<Product>(url);
+  }
+
+  delete(id: number) : Observable<Object> {
+    const url = this.baseUrl + '/' + id;
+    return this.httpClient.delete(url);
+  }
+
 }
