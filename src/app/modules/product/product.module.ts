@@ -37,7 +37,7 @@ registerLocaleData(localePt);
   ],
   providers: [{
     provide: LOCALE_ID,
-    useValue: 'pt-BR'
+    useValue: 'pt-BR',
   }]
 })
 export class ProductModule { }

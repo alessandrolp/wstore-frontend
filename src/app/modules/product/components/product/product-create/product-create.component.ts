@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from '../../product.model';
@@ -11,8 +12,8 @@ import { ProductService } from '../../product.service';
 })
 export class ProductCreateComponent implements OnInit {
 
-  horizontalPositionAlert: MatSnackBarHorizontalPosition = 'center';
-  verticalPositionAlert: MatSnackBarVerticalPosition = 'bottom';
+  horizontalPositionAlert: MatSnackBarHorizontalPosition = 'right';
+  verticalPositionAlert: MatSnackBarVerticalPosition = 'top';
 
   product: Product = {
     name: '',

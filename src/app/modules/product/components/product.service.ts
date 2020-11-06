@@ -30,9 +30,16 @@ export class ProductService {
     return this.httpClient.get<Product>(url);
   }
 
-  delete(id: number) : Observable<Object> {
-    const url = this.baseUrl + '/' + id;
-    return this.httpClient.delete(url);
+  delete(ids: number[]) : Promise<void[]> {
+    let promises = ids.map((id) => this.deleteRecursive(id));
+    return Promise.all(promises);
+  }
+
+  private deleteRecursive(id: number) : Promise<void>{
+    return new Promise((resolve) => {
+      const url = this.baseUrl + '/' + id;
+      this.httpClient.delete(url).subscribe(() => resolve());
+    })
   }
 
 }

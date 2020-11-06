@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Product } from '../product.model';
 import { ProductService } from '../product.service';
+import { ProductTableComponent } from './product-table/product-table.component';
 
 @Component({
   selector: 'app-product',
@@ -14,11 +15,13 @@ export class ProductComponent implements OnInit {
   products: Product[];
   selectedProducts: Product[];
   
-
   btnDeleteDisabled = true;
   btnEditDisabled = true;
 
-  constructor(private router: Router, private productService: ProductService) { }
+  constructor(
+    private router: Router,
+    private productService: ProductService,
+  ) { }
 
   ngOnInit(): void {
   }
@@ -39,8 +42,10 @@ export class ProductComponent implements OnInit {
   }
 
   onProductDelete(): void {
-    let ids = this.selectedProducts.map(p => p.id);
-    ids.forEach(id => this.productService.delete(id));
+    let ids = this.selectedProducts.map(s => s.id);
+    this.productService.delete(ids).then(() => {
+      this.router.navigate(['/products']);
+    })
   }
  
 

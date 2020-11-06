@@ -12,6 +12,7 @@ import { ProductTableDataSource } from './product-table-datasource';
   templateUrl: './product-table.component.html',
   styleUrls: ['./product-table.component.scss']
 })
+
 export class ProductTableComponent implements AfterViewInit, OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
