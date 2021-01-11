@@ -7,7 +7,7 @@
         {
             "type": "chrome",
             "request": "launch",
-            "name": "debug w3store erp frontend",
+            "name": "debug nkey frontend",
             "url": "http://localhost:4200",
             "webRoot": "${workspaceFolder}"
         }

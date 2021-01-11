@@ -7,7 +7,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 import { SharedModule } from 'src/app/shared/shared.module';
-import { ProductModule } from 'src/app/modules/product/product.module';
+import { CadastroModule } from 'src/app/modules/cadastro/cadastro.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +16,7 @@ import { ProductModule } from 'src/app/modules/product/product.module';
   imports: [
     CommonModule,
     RouterModule,
-    ProductModule,
+    CadastroModule,
     SharedModule,
     MatSidenavModule,
     FlexLayoutModule,

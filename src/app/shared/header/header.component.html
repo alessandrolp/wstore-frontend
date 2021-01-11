@@ -4,7 +4,7 @@
             <mat-icon>menu</mat-icon>
         </button>
 
-        <span> W3Store </span>
+        <span> NKEY </span>
 
         <div fxFlex fxLayout="row" fxLayoutAlign="flex-end">
             <ul fxLayout="row" fxLayoutGap="20px">
@@ -13,7 +13,7 @@
                         <mat-icon>settings</mat-icon>
                     </button>
                     <mat-menu #menu="matMenu">
-                        <button mat-menu-item>
+                        <button mat-menu-item (click)="onExit()">
                             <mat-icon>exit_to_app</mat-icon>
                             Sair do sistema
                         </button>
